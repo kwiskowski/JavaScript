@@ -72,3 +72,7 @@ export const myQuestions = [
     correctAnswer: "a",
   },
 ];
+
+export const congratulations =
+  "Gratulacje, udało Ci się przejść Quiz, Twoje tajne hasło, dzięki któremu odbierzesz swoją nagrodę to:";
+export const password = "  Leśna Księga Życia";

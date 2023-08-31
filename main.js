@@ -1,5 +1,9 @@
 import { myQuestions } from "./questions.js";
+import { congratulations } from "./questions.js";
+import { password } from "./questions.js";
 console.log(myQuestions);
+
+// Początek kodu quizu
 
 const quizContainer = document.getElementById("quiz");
 const resultsContainer = document.getElementById("results");
@@ -20,6 +24,7 @@ function generateQuiz(
     let letter = ["a", "b", "c"];
 
     // for each question...
+    let i;
     for (let i = 0; i < questions.length; i++) {
       // first reset the list of answers
       answers = [];
@@ -65,6 +70,7 @@ function generateQuiz(
     let numCorrect = 0;
 
     // for each question...
+    let i;
     for (i = 0; i < questions.length; i++) {
       // find selected answer
       userAnswer = (
@@ -89,7 +95,14 @@ function generateQuiz(
     }
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = numCorrect + " out of " + questions.length;
+    resultsContainer.innerHTML = numCorrect + " na " + questions.length;
+
+    console.log(numCorrect);
+    if (numCorrect >= 6) {
+      const rewardContainer = document.getElementById("reward");
+      // rewardContainer.innerHTML = congratulations + password;
+      alert(congratulations + password);
+    }
   }
 
   // show questions right away
@@ -100,3 +113,5 @@ function generateQuiz(
     showResults(questions, quizContainer, resultsContainer);
   };
 }
+
+// Koniec kodu quizu
