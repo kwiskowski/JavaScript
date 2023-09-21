@@ -14,7 +14,7 @@ function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
   quizTitle.innerHTML = "Leśna Księga Życia";
-  nextButton.innerHTML = "Next";
+  nextButton.innerHTML = "Następne pytanie";
   showQuestion();
 }
 

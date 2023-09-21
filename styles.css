@@ -6,20 +6,26 @@
 }
 
 body {
-  background: #036542;
+  background: #3e7327;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
 }
 
 .app {
-  background: #fff;
+  background: #036542;
   width: 90%;
   max-width: 600px;
   margin: 100px auto 0;
   border-radius: 10px;
+  border: 2px solid;
   padding: 30px;
 }
 .app h1 {
   font-size: 25px;
-  color: #222;
+  color: #fff;
   font-weight: 600;
   border-bottom: 1px solid#333;
   padding-bottom: 30px;
@@ -31,7 +37,7 @@ body {
 
 .quiz h2 {
   font-size: 18px;
-  color: #222;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -50,7 +56,7 @@ body {
 }
 
 .btn:hover:not([disabled]) {
-  background: #222;
+  background: #3e7327;
   color: #fff;
 }
 
@@ -59,7 +65,7 @@ body {
 }
 
 #next-btn {
-  background: #036542;
+  background: #3e7327;
   color: #fff;
   font-weight: 500;
   width: 150px;
@@ -85,19 +91,24 @@ body {
   background-color: #77b55a;
   border-radius: 33px;
   border: 3px solid #4b8f29;
-  display: inline-block;
+  display: flex;
+  gap: 10px;
   cursor: pointer;
   color: #ffffff;
   font-family: Trebuchet MS;
   font-size: 18px;
+  margin: 10px auto 10px;
+  max-width: 200px;
+  text-align: center;
+  justify-content: center;
   padding: 15px 28px;
   text-decoration: none;
   text-shadow: 0px 1px 0px #5b8a3c;
 }
-.game-icon:hover {
+/* .game-icon:hover {
   background: linear-gradient(to bottom, #72b352 5%, #77b55a 100%);
   background-color: #0c1f04;
-}
+} */
 .game-icon:active {
   position: relative;
   top: 1px;
