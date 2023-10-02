@@ -8,7 +8,10 @@ export const questions = [
   //   ],
   // },
 
+  // Tematy quizów wpisywane w subject: sarna, dzik, łoś, bóbr, dzięcioł, pszczoła
+
   {
+    subject: "sarna",
     question: "Czym się żywi sarna?",
     answers: [
       { text: "Jest drapieżnikiem", correct: false },
@@ -18,6 +21,7 @@ export const questions = [
   },
 
   {
+    subject: "sarna",
     question: "Jak się nazywa samiec sarny?",
     answers: [
       { text: "Kozioł", correct: true },
@@ -27,6 +31,7 @@ export const questions = [
   },
 
   {
+    subject: "sarna",
     question: "Jak się nazywa kostny twór na głowie samca sarny?",
     answers: [
       { text: "poroże", correct: true },
@@ -36,6 +41,7 @@ export const questions = [
   },
 
   {
+    subject: "sarna",
     question: "Gdzie odpoczywają sarny?",
     answers: [
       { text: "w domu", correct: false },
@@ -45,6 +51,7 @@ export const questions = [
   },
 
   {
+    subject: "sarna",
     question: "Kiedy możemy spotkać małe sarny?",
     answers: [
       { text: "na jesieni", correct: false },
@@ -54,6 +61,7 @@ export const questions = [
   },
 
   {
+    subject: "pszczoła",
     question: "Co takiego zbiera pszczoła z kwiatów?",
     answers: [
       { text: "pyłek i nektar", correct: true },
@@ -63,6 +71,7 @@ export const questions = [
   },
 
   {
+    subject: "pszczoła",
     question: "Co oznacza odcień wosku pszczelego?",
     answers: [
       { text: "im jaśniejszy tym starszy", correct: false },
@@ -72,6 +81,7 @@ export const questions = [
   },
 
   {
+    subject: "pszczoła",
     question: "w jakich porach roku pszczoły zapylają rośliny?",
     answers: [
       { text: "wiosną i latem", correct: true },
