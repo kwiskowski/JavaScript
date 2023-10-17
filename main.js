@@ -2,6 +2,8 @@ import { questions } from "./questions.js";
 import { congratulations } from "./questions.js";
 import { password } from "./questions.js";
 
+// import Notiflix from "notiflix";
+
 const quizTitle = document.getElementById("quiz-title");
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
@@ -9,32 +11,28 @@ const nextButton = document.getElementById("next-btn");
 
 const quizBox = document.getElementById("quiz-wrapper");
 
-const quizButton = document.querySelectorAll(".app-wrapper button");
-console.log(quizButton.textContent);
-// const sarnaQuizButton = document.getElementById("sarna-quiz");
-// const dzikQuizButton = document.getElementById("dzik-quiz");
-// const losQuizButton = document.getElementById("los-quiz");
-// const bobrQuizButton = document.getElementById("bobr-quiz");
-// const dzieciolQuizButton = document.getElementById("dzieciol-quiz");
-// const pszczolaQuizButton = document.getElementById("pszczola-quiz");
+const sarnaQuizButton = document.getElementById("sarna-quiz");
+const dzikQuizButton = document.getElementById("dzik-quiz");
+const losQuizButton = document.getElementById("los-quiz");
+const bobrQuizButton = document.getElementById("bobr-quiz");
+const dzieciolQuizButton = document.getElementById("dzieciol-quiz");
+const pszczolaQuizButton = document.getElementById("pszczola-quiz");
 
-quizButton.addEventListener("click", quizHandler);
-// sarnaQuizButton.addEventListener("click", quizHandler);
-// dzikQuizButton.addEventListener("click", quizHandler);
-// losQuizButton.addEventListener("click", quizHandler);
-// bobrQuizButton.addEventListener("click", quizHandler);
-// dzieciolQuizButton.addEventListener("click", quizHandler);
-// pszczolaQuizButton.addEventListener("click", quizHandler);
+sarnaQuizButton.addEventListener("click", quizHandler);
+dzikQuizButton.addEventListener("click", quizHandler);
+losQuizButton.addEventListener("click", quizHandler);
+bobrQuizButton.addEventListener("click", quizHandler);
+dzieciolQuizButton.addEventListener("click", quizHandler);
+pszczolaQuizButton.addEventListener("click", quizHandler);
 
 let currentQuestionIndex = 0;
 let score = 0;
-// let quizName = "Quiz";
 
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  // quizTitle.innerHTML = quizName;
   nextButton.innerHTML = "Następne pytanie";
+  quizBox.style.display = "none";
   showQuestion();
 }
 
@@ -83,15 +81,12 @@ function selectAnswer(e) {
 
 function showScore() {
   resetState();
-  // quizTitle.innerHTML = `Udało Ci się zdobyć ${score} z ${questions.length}!`;
   quizBox.style.display = "none";
 
   if (score >= 6) {
-    // questionElement.innerHTML = `${congratulations} ${password}`;
     questionElement.style.display = "none";
     quizTitle.innerHTML = `Udało Ci się zdobyć ${score} z ${questions.length}! </br>  ${congratulations} ${password}`;
   } else {
-    // questionElement.innerHTML = "Prawie!, aby zdobyć hasło spróbuj jeszcze raz";
     quizTitle.innerHTML = `Udało Ci się zdobyć ${score} z ${questions.length}! </br> Prawie!, aby zdobyć hasło spróbuj jeszcze raz`;
     questionElement.style.display = "none";
   }
@@ -112,8 +107,6 @@ nextButton.addEventListener("click", () => {
   if (currentQuestionIndex < questions.length) {
     handleNextButton();
   } else {
-    // startQuiz();
-    // quizBox.style.display = "flex";
     location.reload();
   }
 });
@@ -123,4 +116,32 @@ function quizHandler() {
   quizTitle.innerHTML = quizButton.textContent;
   quizBox.style.display = "none";
 }
-// console.log(quizName);
+
+// Modal
+const backdrop = document.getElementById("modal-game");
+
+// Lista gier
+const quizGame = document.getElementById("quiz-game");
+const secondGame = document.getElementById("second-game");
+const thirdGame = document.getElementById("third-game");
+// Otwieranie modala quizu
+quizGame.addEventListener("click", openModal);
+function openModal() {
+  backdrop.classList.remove("is-hidden");
+}
+// Otwieranie modala pozostałych gier
+secondGame.addEventListener("click", gameNotReady);
+thirdGame.addEventListener("click", gameNotReady);
+function gameNotReady() {
+  // Notiflix.Notify.warning("Gra w produkcji, cierpliwości");
+  alert("Gra w produkcji, cierpliwości :P");
+}
+
+// Zamykanie modala
+const modalCloseBtn = document.getElementById("modal-close-btn");
+modalCloseBtn.addEventListener("click", closeModal);
+
+function closeModal() {
+  backdrop.classList.add("is-hidden");
+}
+// _____________________________________________________________________________________________
